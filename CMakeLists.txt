@@ -14,9 +14,10 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 # 包含头文件目录
 include_directories(include)
+include_directories(core/include)
 
 # 添加所有源文件
-file(GLOB SOURCES "src/*.cpp")
+file(GLOB SOURCES "src/*.cpp" "core/src/*.cpp")
 
 # 添加可执行文件
 add_executable(main ${SOURCES})

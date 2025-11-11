@@ -1,5 +1,6 @@
 #include "../include/chapter3.h"
 #include <print>
+#include <vector>
 bool Judge(char *A){
     int i{},j{},k{};
     while (A[i] != '\0') {
@@ -22,7 +23,8 @@ bool Judge(char *A){
 
 int dc(question4::LinkList L,int n){
     int i{};
-    char S[n/2];
+    // char S[n/2];
+    std::vector<char> S{};
     question4::LNode* p{L->next};
     for (; i<n/2; i++) {
         S[i]=p->data;
