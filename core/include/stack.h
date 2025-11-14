@@ -1,6 +1,7 @@
 #ifndef STACK_H
 #define STACK_H
-
+#include <string>
+#include <string_view>
 #define MAX_SIZE 100
 typedef struct{
 int data[MAX_SIZE];
@@ -18,4 +19,9 @@ typedef struct Node{
  Node* next;
 }LinkStack;
 
+
+//栈的应用
+bool isValidParentheses(std::string_view sv);
+std::string infixToPostfix(std::string_view infix);
+std::string infixToPrefix(std::string_view infix);
 #endif
