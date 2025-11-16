@@ -1,7 +1,23 @@
 #ifndef QUEUE_H
 #define QUEUE_H
-
+#include "tree.h"
 #define QUEUE_MAX_EIZE 100
+
+typedef struct node{
+    struct Tree* data;
+    struct node* next;
+}LinkNode;
+
+typedef struct{
+    LinkNode* front;
+    LinkNode* rear;
+}LinkQueue;
+
+void init_link_q(LinkQueue& q);
+void en_link_q(LinkQueue& q, struct Tree* elem);
+bool de_link_q(LinkQueue& q, struct Tree*& elem);
+bool link_queue_empty(LinkQueue& q);
+
 
 //循环队列
 typedef struct{

@@ -7,5 +7,6 @@ int main() {
     if(isValidParentheses(s)){
         std::println("Success");
     }else std::println("Failure");
+    std::println("你好世界");   
     return 0;
 }
