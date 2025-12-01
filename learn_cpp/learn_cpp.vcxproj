@@ -140,7 +140,7 @@
     <ClCompile Include="module\chapter3.ixx" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HeaderUnits.h">
+    <ClCompile Include="core\HeaderUnits.h">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
       <BuildStlModules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildStlModules>
     </ClCompile>
