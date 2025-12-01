@@ -26,3 +26,34 @@ void level_order (Tree* T) {
         }
     }
 }
+
+
+
+void visit (ThreadTree*& current, ThreadTree*& pre_ptr) {
+    if (current->left == nullptr) {
+        current->left = pre_ptr;
+        current->l_tag = 1;
+    }
+    if (pre_ptr != nullptr && pre_ptr->right == nullptr) {
+        pre_ptr->right = current;
+        pre_ptr->r_tag = 1;
+    }
+    pre_ptr = current;
+}
+
+void in_thread (ThreadTree* current, ThreadTree*& pre_ptr) {
+    if(current == nullptr){ return; }
+    in_thread (current->left, pre_ptr);
+    visit (current,pre_ptr);
+    in_thread (current->right, pre_ptr); 
+}
+void create_in_thread (ThreadTree* root) {
+    if (root == nullptr) { return; }
+    ThreadTree* pre_ptr = nullptr;
+    in_thread (root, pre_ptr);
+    if (pre_ptr != nullptr) {
+        pre_ptr->right = nullptr;
+        pre_ptr->r_tag = 1;
+    }
+}
+
