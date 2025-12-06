@@ -18,11 +18,11 @@ int main () {
 	//     2   3
 	//    / \
 	//   4   5
-	ThreadTree* n1 = new ThreadTree{1, nullptr, nullptr, 0, 0};
-	ThreadTree* n2 = new ThreadTree{2, nullptr, nullptr, 0, 0};
-	ThreadTree* n3 = new ThreadTree{3, nullptr, nullptr, 0, 0};
-	ThreadTree* n4 = new ThreadTree{4, nullptr, nullptr, 0, 0};
-	ThreadTree* n5 = new ThreadTree{5, nullptr, nullptr, 0, 0};
+	auto* n1 = new ThreadTree{1, nullptr, nullptr, 0, 0};
+	auto* n2 = new ThreadTree{2, nullptr, nullptr, 0, 0};
+	auto* n3 = new ThreadTree{3, nullptr, nullptr, 0, 0};
+	auto* n4 = new ThreadTree{4, nullptr, nullptr, 0, 0};
+	auto* n5 = new ThreadTree{5, nullptr, nullptr, 0, 0};
 
 	n1->left = n2; n1->right = n3;
 	n2->left = n4; n2->right = n5;

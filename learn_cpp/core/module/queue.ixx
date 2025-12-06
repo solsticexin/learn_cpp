@@ -1,6 +1,6 @@
 export module queue;
 import tree;
-#define QUEUE_MAX_EIZE 100
+constexpr auto QUEUE_MAX_SIZE = 100;
 
 export typedef struct node {
     struct Tree* data;
@@ -20,7 +20,7 @@ export inline bool link_queue_empty (LinkQueue& q) { return q.front == nullptr; 
 
 //—≠ª∑∂”¡–
 export typedef struct {
-    int data[QUEUE_MAX_EIZE];
+    int data[QUEUE_MAX_SIZE];
     int front;
     int rear;
 }Queue;
@@ -46,14 +46,14 @@ export inline bool queue_empty (Queue& q) {
     else return false;
 } 
 export bool en_queue (Queue& q, int elem) {
-    if ((q.rear + 1) % QUEUE_MAX_EIZE == q.front) return false;
+    if ((q.rear + 1) % QUEUE_MAX_SIZE == q.front) return false;
     q.data[q.rear] = elem;
-    q.rear = (q.rear + 1) % QUEUE_MAX_EIZE;
+    q.rear = (q.rear + 1) % QUEUE_MAX_SIZE;
     return true;
 }
 export bool de_queue (Queue& q, int& elem) {
     if (queue_empty (q)) return false;
     elem = q.data[q.front];
-    q.front = (q.front + 1) % QUEUE_MAX_EIZE;
+    q.front = (q.front + 1) % QUEUE_MAX_SIZE;
     return true;
 }

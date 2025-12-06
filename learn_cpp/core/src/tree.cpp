@@ -3,7 +3,6 @@ module tree;
 import queue;
 import <print>;
 
-using Tree = struct Tree;
 
 void visit (Tree* val) {
     std::println ("{}", val->data);
@@ -12,10 +11,10 @@ void visit (Tree* val) {
 void level_order (Tree* T) {
     LinkQueue q;
     init_link_q (q);
-    using Node = Tree;
-    Node* temp;
+    //using Node = Tree;
     en_link_q (q, T);
     while (!link_queue_empty (q)) {
+        Tree* temp{};
         de_link_q (q, temp);
         visit (temp);
         if (temp->left != nullptr) {
@@ -57,3 +56,20 @@ void create_in_thread (ThreadTree* root) {
     }
 }
 
+
+/*================================*/
+//中序线索二叉树找中序后继
+
+//第一个被中序遍历的结点
+ThreadTree* first_node(ThreadTree* node){
+	while (node->l_tag==true){
+        node = node->left;
+	}
+    return node;
+}
+
+ThreadTree* in_next_node (const ThreadTree* node){
+    if (node->r_tag == false) return first_node (node->right);
+    else return node->right;
+}
+/*================================*/

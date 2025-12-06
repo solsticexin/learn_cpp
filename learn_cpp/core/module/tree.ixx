@@ -14,3 +14,4 @@ export struct ThreadTree {
 };
 export void level_order (Tree* T);
 export void create_in_thread (ThreadTree* root);
+export ThreadTree* in_next_node (const ThreadTree* node); //终须遍历后继结点
