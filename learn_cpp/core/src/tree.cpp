@@ -11,7 +11,7 @@ void visit (Tree* val) {
 void level_order (Tree* T) {
     LinkQueue q;
     init_link_q (q);
-    //using Node = Tree;
+    //using LinkNode = Tree;
     en_link_q (q, T);
     while (!link_queue_empty (q)) {
         Tree* temp{};

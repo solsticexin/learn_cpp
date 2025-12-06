@@ -26,13 +26,13 @@ export bool get_top (Stack& s, int& top_elem) {
 }
 
 //Á´Õ»
-export typedef struct Node {
+export typedef struct LinkNode {
 	int data[MAX_SIZE];
-	Node* next;
+	LinkNode* next;
 }LinkStack;
 
 
 //Õ»µÄÓ¦ÓÃ
-export bool isValidParentheses (std::string_view sv);
-export std::string infixToPostfix (std::string_view infix);
-export std::string infixToPrefix (std::string_view infix);
+export bool is_valid_parentheses (std::string_view sv);
+export std::string infix_to_postfix (std::string_view infix);
+export std::string infix_to_prefix (std::string_view infix);

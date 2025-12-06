@@ -5,8 +5,8 @@ import tree;
 
 int main () {
 	std::println ("Learn data structure");
-	std::string s{ "{([])}" };
-	if (isValidParentheses (s)) {
+	const std::string s{ "{([])}" };
+	if (is_valid_parentheses (s)) {
 		std::println ("Success");
 	}
 	else std::println ("Failure");

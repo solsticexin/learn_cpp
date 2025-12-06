@@ -1,16 +1,16 @@
 module queue;
 
 void en_link_q (LinkQueue& q, struct Tree* elem) {
-    LinkNode* newNode = new LinkNode;
-    newNode->data = elem;
-    newNode->next = nullptr;
+    const auto new_node = new LinkNode;
+    new_node->data = elem;
+    new_node->next = nullptr;
 
     if (link_queue_empty (q)) {
-        q.front = q.rear = newNode;
+        q.front = q.rear = new_node;
     }
     else {
-        q.rear->next = newNode;
-        q.rear = newNode;
+        q.rear->next = new_node;
+        q.rear = new_node;
     }
 }
 
@@ -19,7 +19,7 @@ bool de_link_q (LinkQueue& q, struct Tree*& elem) {
         return false;
     }
 
-    LinkNode* temp = q.front;
+    const LinkNode* temp = q.front;
     elem = temp->data;
     q.front = temp->next;
 

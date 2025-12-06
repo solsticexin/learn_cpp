@@ -2,15 +2,15 @@ export module queue;
 import tree;
 constexpr auto QUEUE_MAX_SIZE = 100;
 
-export typedef struct node {
+export struct LinkNode {
     struct Tree* data;
-    struct node* next;
-}LinkNode;
+    struct LinkNode* next;
+};
 
-export typedef struct {
+export struct LinkQueue {
     LinkNode* front;
     LinkNode* rear;
-}LinkQueue;
+};
 
 export inline void init_link_q (LinkQueue& q) { q.front = q.rear = nullptr; }
 export void en_link_q (LinkQueue& q, struct Tree* elem);
@@ -19,11 +19,11 @@ export inline bool link_queue_empty (LinkQueue& q) { return q.front == nullptr; 
 
 
 //—≠ª∑∂”¡–
-export typedef struct {
+export struct Queue {
     int data[QUEUE_MAX_SIZE];
     int front;
     int rear;
-}Queue;
+};
 
 export inline void init_queue (Queue& q){ q.front = q.rear = 0; }
 

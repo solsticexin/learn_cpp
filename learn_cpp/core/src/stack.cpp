@@ -1,7 +1,7 @@
 module stack;
 import <stack>;
 import <format>;
-bool isValidParentheses (std::string_view sv) {
+bool is_valid_parentheses (std::string_view sv) {
     std::stack<char> st{};
     std::string_view temp{};
     for (auto c = sv.begin (); c != sv.end (); ++c) {
@@ -24,7 +24,7 @@ bool isValidParentheses (std::string_view sv) {
     return st.empty ();
 }
 
-std::string infixToPostfix (std::string_view infix) {
+std::string infix_to_postfix (std::string_view infix) {
     std::stack<char> stack{};
     std::string postfix{};
     auto precedence = [](char op) {
@@ -91,7 +91,7 @@ std::string infixToPostfix (std::string_view infix) {
     return postfix;
 }
 
-std::string infixToPrefix (std::string_view infix) {
+std::string infix_to_prefix (std::string_view infix) {
     auto result = std::format ("");
     return result;
 }

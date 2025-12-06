@@ -1,7 +1,7 @@
 export module chapter3;
 
 //µÚÈýÌâ
-export bool Judge (char* A);
+export bool judge (char* A);
 //question 4
 export namespace question4 {
     export typedef struct Node {

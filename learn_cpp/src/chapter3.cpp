@@ -2,7 +2,7 @@ module chapter3;
 import <print>;
 import <vector>;
 using elemtp = int;
-bool Judge (char* A) {
+bool judge (char* A) {
     int i{}, j{}, k{};
     while (A[i] != '\0') {
         switch (A[i]) {
@@ -65,7 +65,6 @@ int push (int i, elemtp x) {
     case 0:
         question5::s.stack[++question5::s.top[0]] = x;
         return 1;
-        break;
     case 1:
         question5::s.stack[--question5::s.top[1]] = x;
         return 1;
