@@ -95,8 +95,7 @@ void rev_inorder (ThreadTree* root) {
 	}
 }
 
-/*================================*/
-
+/*-----------------前序遍历线索化-begin-----------------*/
 void create_pre_thread(ThreadTree* root) {
     if (root==nullptr)return;
 	ThreadTree* pre{ nullptr };
@@ -121,9 +120,9 @@ void pre_visit (ThreadTree*node,ThreadTree*& pre) {
     }
     pre = node;
 }
+/*-----------------前序遍历线索化-end-----------------*/
 
-
-/*-----------------后序遍历线索化-----------------*/
+/*-----------------后序遍历线索化-begin-----------------*/
 void create_last_thread (ThreadTree* root) {
     if (root == nullptr)return;
     ThreadTree* pre{ nullptr };
@@ -146,4 +145,4 @@ void last_visit (ThreadTree* node, ThreadTree*& pre) {
     }
     pre = node;
 }
-/*---------------------------------------------*/
+/*-----------------后序遍历线索化-end-----------------*/

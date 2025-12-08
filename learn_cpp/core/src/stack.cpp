@@ -32,15 +32,15 @@ std::string infix_to_postfix (std::string_view infix) {
         if (op == '*' || op == '/') return 2;
         return 0;
         };
-    auto isDigit = [](char c) {
+    auto is_digit = [](char c) {
         if (c >= 48 && c <= 57) return true;
         return false;
         };
-    auto isOperator = [](char c) {
+    auto is_operator = [](char c) {
         if (c == '+' || c == '-' || c == '*' || c == '/')return true;
         return false;
         };
-    auto isOperand = [](char c) {
+    auto is_operand = [](char c) {
         return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
         };
     // auto transfer=[&postfix](char c){
@@ -48,11 +48,11 @@ std::string infix_to_postfix (std::string_view infix) {
     //     postfix +=' ';
     // };
     for (auto c : infix) {
-        if (isDigit (c) || isOperand (c)) {
+        if (is_digit (c) || is_operand (c)) {
             postfix += c;
             postfix += ' ';
         }
-        else if (isOperator (c)) {
+        else if (is_operator (c)) {
             while (!stack.empty () && stack.top () != '('
                 && precedence (stack.top ()) >= precedence (c)
                 ) {
