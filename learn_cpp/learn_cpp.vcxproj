@@ -106,7 +106,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp23</LanguageStandard>
       <BuildStlModules>false</BuildStlModules>
-      <LanguageStandard_C>Default</LanguageStandard_C>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,9 +138,11 @@
     <ClCompile Include="core\module\stack.ixx" />
     <ClCompile Include="core\module\tree.ixx" />
     <ClCompile Include="module\chapter3.ixx" />
+    <ClCompile Include="template\test_union_find.ixx" />
+    <ClCompile Include="template\union_find.ixx" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="core\HeaderUnits.h">
+    <ClCompile Include="HeaderUnits.h">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsHeaderUnit</CompileAs>
       <BuildStlModules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildStlModules>
     </ClCompile>

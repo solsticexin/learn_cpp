@@ -18,7 +18,7 @@
     <ClCompile Include="src\main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="core\HeaderUnits.h">
+    <ClCompile Include="HeaderUnits.h">
       <Filter>头文件</Filter>
     </ClCompile>
     <ClCompile Include="core\module\queue.ixx">
@@ -43,6 +43,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\chapter3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="template\union_find.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="template\test_union_find.ixx">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
