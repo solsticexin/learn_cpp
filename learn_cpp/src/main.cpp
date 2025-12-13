@@ -53,7 +53,7 @@ void test2() {
 }
 int main () {
 	std::println ("Learn data structure");
-	// test_union_find::run_all_tests ();
+	test_union_find::run_all_tests ();
 	// test1 ();
 	// test2 ();
 	return 0;

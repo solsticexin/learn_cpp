@@ -7,7 +7,7 @@ import <set>;
 export namespace test_union_find {
 
     // 辅助函数：打印测试结果
-    void print_test_result (const std::string& test_name, bool passed) {
+    void print_test_result (const std::string& test_name, const bool passed) {
         std::cout << "[" << (passed ? "PASS" : "FAIL") << "] " << test_name << "\n";
     }
 
@@ -60,7 +60,7 @@ export namespace test_union_find {
             uf.unite (i, i + 1);
         }
         // 此时, 0,1,2,3,4 应在一个集合中
-        int root_0 = uf.find (0);
+        const int root_0 = uf.find (0);
         for (int i = 1; i <= 4; ++i) {
             if (uf.find (i) != root_0) return false;
         }
@@ -70,7 +70,7 @@ export namespace test_union_find {
             uf.unite (i, i + 1);
         }
         // 5,6,7,8,9 应在一个集合中
-        int root_5 = uf.find (5);
+        const int root_5 = uf.find (5);
         for (int i = 6; i <= 9; ++i) {
             if (uf.find (i) != root_5) return false;
         }
@@ -89,8 +89,7 @@ export namespace test_union_find {
 
         // 路径压缩测试：多次查找根节点，确保效率
         // 这很难直接断言，但可以通过根节点一致性来间接验证
-        int root_after_compression = uf.find (3);
-        if (root_after_compression != final_root) return false;
+        if (const int root_after_compression = uf.find (3); root_after_compression != final_root) return false;
 
         return true;
     }
